@@ -1,38 +1,19 @@
-// Skript pro mobilní menu a scroll efekt na hlavičku
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav');
-    const header = document.querySelector('.header');
+const cards = document.querySelectorAll(".card");
 
-    // Mobilní menu
-    hamburger.addEventListener('click', function() {
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-        hamburger.classList.toggle('active');
-    });
+const observer = new IntersectionObserver(entries => {
 
-    // Změna barvy hlavičky při scrollu
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
         }
+
     });
 
-    // Plynulé scrollování k sekcím
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-            // Zavřít mobilní menu po kliknutí
-            nav.style.display = 'none';
-            hamburger.classList.remove('active');
-        });
-    });
+}, {
+    threshold: 0.2
+});
+
+cards.forEach(card => {
+    observer.observe(card);
 });
