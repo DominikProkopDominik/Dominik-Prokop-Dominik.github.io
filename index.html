@@ -3,112 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje stránky</title>
+    <title>Dominik Prokop</title>
+
+    <link rel="stylesheet" href="styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hlavička s menu -->
+
     <header class="header">
-        <div class="container">
-            <a href="#home" class="logo">Dominik</a>
-            <nav class="nav">
-                <a href="#home">Úvod</a>
-                <a href="#about">O mně</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Kontakty</a>
-            </nav>
-            <button class="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+        <div class="logo">DP</div>
+
+        <nav>
+            <a href="#about">O mně</a>
+            <a href="#projects">Projekty</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
     </header>
 
-    <!-- Úvodní sekce -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Vítejte na mých stránkách</h1>
-                <p>Jsem [Dominik] a zabývám se [zejména rozvíjením vztahů s kolegy].</p>
-                <a href="#about" class="btn">Více o mně</a>
-            </div>
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="intro">Ahoj, já jsem</p>
+
+            <h1>Dominik Prokop</h1>
+
+            <p class="subtitle">
+                Učím se web development a tvořím moderní webové stránky.
+            </p>
+
+            <a href="#projects" class="btn">
+                Zobrazit projekty
+            </a>
+
         </div>
+
     </section>
 
-    <!-- Sekce O mně -->
     <section id="about" class="about">
-        <div class="container">
-            <h2>O mně</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Jsem mladík se svěží myslí</p>
-                    <p>https://www.linkedin.com/feed/</p>
-                </div>
-                <div class="about-image">
-                    <img src="images/foto.jpg" alt="Moje foto" onerror="this.style.display='none'">
-                </div>
-            </div>
-        </div>
+
+        <h2>O mně</h2>
+
+        <p>
+            Zajímám se o tvorbu webových stránek, design a moderní technologie.
+            Tento web je můj vlastní projekt, na kterém se učím HTML, CSS a JavaScript.
+        </p>
+
     </section>
 
-    <!-- Sekce Portfolio/Galerie -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Moje portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="images/projekt1.jpg" alt="Projekt 1" onerror="this.style.display='none'">
-                    <h3>Název projektu 1</h3>
-                    <p>Popis projektu.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/projekt2.jpg" alt="Projekt 2" onerror="this.style.display='none'">
-                    <h3>Název projektu 2</h3>
-                    <p>Popis projektu.</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/projekt3.jpg" alt="Projekt 3" onerror="this.style.display='none'">
-                    <h3>Název projektu 3</h3>
-                    <p>Popis projektu.</p>
-                </div>
+    <section id="projects" class="projects">
+
+        <h2>Projekty</h2>
+
+        <div class="project-grid">
+
+            <div class="card">
+                <h3>Osobní web</h3>
+                <p>
+                    Moderní portfolio vytvořené pomocí HTML, CSS a JavaScriptu.
+                </p>
             </div>
+
+            <div class="card">
+                <h3>Další projekt</h3>
+                <p>
+                    Sem později přidáš další vlastní projekt.
+                </p>
+            </div>
+
         </div>
+
     </section>
 
-    <!-- Sekce Kontakty -->
     <section id="contact" class="contact">
-        <div class="container">
-            <h2>Kontakty</h2>
-            <div class="contact-content">
-                <p>Neváhejte mě kontaktovat prostřednictvím sociálních sítí nebo emailu.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/tvé-jméno/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.facebook.com/tvé-jméno/" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/tvé-jméno/" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-                <p class="email">Email: <a href="mailto:tvuj@email.com">tvuj@email.com</a></p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Patička -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Moje jméno. Všechna práva vyhrazena.</p>
-        </div>
-    </footer>
+        <h2>Kontakt</h2>
+
+        <p>Email: tvujemail@example.com</p>
+
+        <a
+            href="https://github.com/DominikProkopDominik"
+            target="_blank"
+            class="github-btn"
+        >
+            GitHub profil
+        </a>
+
+    </section>
 
     <script src="script.js"></script>
+
 </body>
 </html>
