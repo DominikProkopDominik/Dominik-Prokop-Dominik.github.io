@@ -1,341 +1,229 @@
-/* Reset a základní styly */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --light-color: #e0f7fa;
-    --dark-color: #1a252f;
-    --text-color: #333;
-    --text-light: #7f8c8d;
-    --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    background: #0d0d0d;
+    color: white;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--white);
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/* HEADER */
 
-/* Hlavička */
 .header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-    z-index: 1000;
-    padding: 20px 0;
-    transition: var(--transition);
-}
-
-.header.scrolled {
-    background-color: var(--primary-color);
-    padding: 15px 0;
-}
-
-.header.scrolled .logo,
-.header.scrolled .nav a {
-    color: var(--white);
-}
-
-.header.scrolled .hamburger span {
-    background-color: var(--white);
-}
-
-.header .container {
+    padding: 20px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
 }
 
 .logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
+    font-size: 24px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #ffffff;
+}
+
+nav a {
+    color: #cccccc;
     text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
 }
 
-.nav {
-    display: flex;
-    gap: 30px;
+nav a:hover {
+    color: white;
 }
 
-.nav a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    transition: var(--transition);
-    position: relative;
-}
+/* HERO */
 
-.nav a:hover {
-    color: var(--secondary-color);
-}
-
-.nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--secondary-color);
-    transition: var(--transition);
-}
-
-.nav a:hover::after {
-    width: 100%;
-}
-
-/* Hamburger menu pro mobil */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    transition: var(--transition);
-}
-
-/* Úvodní sekce (Hero) */
 .hero {
     height: 100vh;
+
     display: flex;
+    justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--white);
-    padding-top: 80px;
+
     text-align: center;
+
+    padding: 20px;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 700px;
+}
+
+.intro {
+    color: #7c7c7c;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .hero h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
+    font-size: 72px;
     margin-bottom: 20px;
-    line-height: 1.2;
+
+    background: linear-gradient(to right, white, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
+.subtitle {
+    font-size: 22px;
+    color: #b3b3b3;
+    margin-bottom: 40px;
 }
 
 .btn {
     display: inline-block;
-    background-color: var(--white);
-    color: var(--primary-color);
-    padding: 12px 30px;
-    border-radius: 5px;
+
+    padding: 14px 28px;
+
+    background: white;
+    color: black;
+
     text-decoration: none;
+
+    border-radius: 12px;
+
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: var(--light-color);
     transform: translateY(-3px);
 }
 
-/* Sekce O mně */
-.about {
-    padding: 100px 0;
-    background-color: var(--white);
-}
+/* ABOUT */
 
-.about h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--primary-color);
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
-
-.about-image {
-    flex: 1;
-    text-align: center;
-}
-
-.about-image img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-/* Sekce Portfolio */
-.portfolio {
-    padding: 100px 0;
-    background-color: var(--light-color);
-}
-
-.portfolio h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--primary-color);
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.portfolio-item {
-    background-color: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.portfolio-item h3 {
-    padding: 15px 20px 5px;
-    font-family: 'Poppins', sans-serif;
-    color: var(--primary-color);
-}
-
-.portfolio-item p {
-    padding: 0 20px 20px;
-    color: var(--text-light);
-}
-
-/* Sekce Kontakty */
+.about,
+.projects,
 .contact {
-    padding: 100px 0;
-    background-color: var(--white);
-    text-align: center;
+
+    padding: 120px 10%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.contact h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
+h2 {
+    font-size: 42px;
     margin-bottom: 30px;
-    color: var(--primary-color);
 }
 
-.contact-content p {
-    max-width: 600px;
-    margin: 0 auto 30px;
-    font-size: 1.1rem;
+.about p,
+.contact p {
+    max-width: 700px;
+    color: #b3b3b3;
+    font-size: 18px;
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
+/* PROJECTS */
+
+.project-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
     gap: 30px;
-    margin: 30px 0;
+
+    margin-top: 40px;
 }
 
-.social-links a {
-    color: var(--primary-color);
-    font-size: 2rem;
-    transition: var(--transition);
+.card {
+
+    background: #151515;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+
+    border: 1px solid #222;
 }
 
-.social-links a:hover {
-    color: var(--secondary-color);
-    transform: translateY(-5px);
+.card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #444;
 }
 
-.email {
-    font-size: 1.1rem;
-    margin-top: 20px;
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
 }
 
-.email a {
-    color: var(--secondary-color);
+.card p {
+    color: #a1a1a1;
+}
+
+/* CONTACT */
+
+.github-btn {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 14px 24px;
+
+    background: #1f1f1f;
+
+    color: white;
+
     text-decoration: none;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
 }
 
-/* Patička */
-.footer {
-    background-color: var(--dark-color);
-    color: var(--white);
-    padding: 30px 0;
-    text-align: center;
+.github-btn:hover {
+
+    background: #2a2a2a;
+
+    transform: translateY(-3px);
 }
 
-/* Responzivní design */
+/* MOBILE */
+
 @media (max-width: 768px) {
-    .nav {
+
+    .header {
+        padding: 20px;
+    }
+
+    nav {
         display: none;
     }
 
-    .hamburger {
-        display: flex;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
-
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 48px;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .subtitle {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 32px;
     }
 }
